@@ -17,3 +17,5 @@ else:
     print("Hello user!")
 
 print("the end!")
+
+# Нетология второй урок
