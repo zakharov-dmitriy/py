@@ -8,4 +8,12 @@ name = input("введите имя: ")
 login = "Dima"
 
 if name == login:
-    print(name)
+    print("hello", name)
+elif len(name) < 4:
+    print("Такое имя недопустимо")
+elif name == "Yo":
+    print("Yo, bro!")
+else:
+    print("Hello user!")
+
+print("the end!")
