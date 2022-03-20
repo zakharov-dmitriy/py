@@ -4,7 +4,7 @@ add - добавить задачу в список (название задач
 show - напечатеть все добавленные задачи.
 exit - выход.'''
 
-tasks = []
+tasks = {}
 
 run = True
 
@@ -15,9 +15,17 @@ while run:
     elif command == "show":
         print(tasks)
     elif command == "add":
+        date = input("Введите дату для добавления задачи: ")
         task = input("Введите название задачи: ")
-        tasks.append(task)
-        print("Задача добавлена!")
+        if date in tasks:
+            # Дата есть в словаре, добавляем в список задачу
+            tasks[date].append(task)
+        else:
+            # Даты в словаре нет, создаемзапись с ключем date (tasks[date] = [task])
+            tasks[date] = []
+            tasks[date].append(task)
+
+        print("Задача ", task, " добавлена на дату ", date)
     elif command == "exit":
         print("Спасибо за использование! До свидания!")
         break
@@ -25,8 +33,6 @@ while run:
         print("Неизвестная команда")
         break
         #run = False
-
-print("Пока!")
 
 # как работает цикл While
 # x = 1
